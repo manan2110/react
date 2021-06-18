@@ -1,10 +1,9 @@
 import React from "react";
 import './App.css';
-
-import Playlist from "../Playlist/Playlist";
+import Playlist from "../Playlist/Playlist"
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
-import Spotify from "../util/Spotify"
+import Spotify from "../../util/Spotify";
 
 class App extends React.Component {
   constructor(props) {
@@ -31,7 +30,7 @@ class App extends React.Component {
 
   addTrack(track) {
     let tracks = this.state.playlistTracks;
-    if (tracks.find(savedTrack => savedTrack.id == track.id)) {
+    if (tracks.find(savedTrack => savedTrack.id === track.id)) {
 
     }
     tracks.push(track);
@@ -42,7 +41,7 @@ class App extends React.Component {
     let tracks = this.state.playlistTracks;
     let trackSearch = this.state.SearchResults;
     tracks = tracks.filter(currentTrack => currentTrack.id !== track.id);
-    trackSearch = unshift(track);
+    trackSearch.unshift(track);
     this.setState({ playlistTracks: track });
   }
 
@@ -67,23 +66,24 @@ class App extends React.Component {
       });
     });
   }
-}
 
-function App() {
-  return (
-    <div>
-      <h1>
-        <a href="http://localhost:3000">Musicophile</a>
-      </h1>
-      <div className="App">
-        <SearchBar onSearch={this.search} />
-        <div className="App-playlist">
-          <SearchResults searchResults={this.state.searchResults} onAdd={this.doThese} />
-          <Playlist playlistTracks={this.state.playlistTracks} onNameChange={this.updatePlaylistName} onRemove={this.removeTrack} onSave={this.savePlaylist} />
+  render() {
+    return (
+      <div>
+        <h1>
+          <a href="http://localhost:3000">Musicophile</a>
+        </h1>
+        <div className="App">
+          <SearchBar onSearch={this.search} />
+          <div className="App-playlist">
+            <SearchResults searchResults={this.state.searchResults} onAdd={this.doThese} />
+            <Playlist playlistTracks={this.state.playlistTracks} onNameChange={this.updatePlaylistName} onRemove={this.removeTrack} onSave={this.savePlaylist} />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
+
 
 export default App;
