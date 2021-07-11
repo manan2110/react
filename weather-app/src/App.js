@@ -40,7 +40,7 @@ function App() {
     <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'App warm':'App'):'App' }>
      <main>
        <div className="search-box">
-         <input type="text" className="search-bar" placeholder="Search..." onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
+         <input type="text" className="search-bar" placeholder="Search City" onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
        </div>
        
        {(typeof weather.main != "undefined") ? (
