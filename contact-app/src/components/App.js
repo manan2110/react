@@ -5,7 +5,7 @@ import "./App.css";
 import Header from "./Header";
 import AddContact from "./AddContact";
 import ContactList from "./ContactList";
-
+import ContactDetail from "./ContactDetail";
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
   const [contacts, setContacts] = useState([]);
@@ -39,6 +39,7 @@ function App() {
       <Switch>
         <Route path="/add" exact  render={(props)=>(<AddContact {...props} addContactHandler={addContactHandler}/>)} />
         <Route path="/" exact render={(props)=>(<ContactList {...props} contacts={contacts} getContactId={removeContactHandler} />)} />  
+        <Route path="/contact/:id" component={ContactDetail} />
       </Switch>
       {/* <AddContact addContactHandler={addContactHandler} />
       <ContactList contacts={contacts} getContactId={removeContactHandler} />  */}
