@@ -15,8 +15,7 @@ const ContactList = (props) => {
     });
     return (
         <div className="main">
-            <h2>NHK</h2>
-            <h2 style={{color:"black"}}>Contact List
+                <h2 style={{color:"black"}}>Contact List
                 <Link to="/add">
                     <button className="ui button blue right">Add Contact</button>
                 </Link>
