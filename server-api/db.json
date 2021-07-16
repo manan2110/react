@@ -1,5 +1,14 @@
 {
-    "contacts":{
-        
+  "contacts": [
+    {
+      "id": "2c18975e-e3b0-453c-a302-5ba2c3dff693",
+      "name": "Test2",
+      "email": "test@gmail.com"
+    },
+    {
+      "id": "a69b945a-95be-4f77-9785-1e53921e1788",
+      "name": "Manan Gyanchandani",
+      "email": "manan.co.in@gmail.com"
     }
+  ]
 }
