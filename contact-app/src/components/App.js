@@ -87,7 +87,7 @@ function App() {
       <Header />
       <Switch>
         <Route path="/add" exact  render={(props)=>(<AddContact {...props} addContactHandler={addContactHandler}/>)} />
-        <Route path="/" exact render={(props)=>(<ContactList {...props} contacts={searchTerm.len < 1? contacts : searchResults} getContactId={removeContactHandler} term={searchTerm} searchKeyword={searchHandler}/>)} />  
+        <Route path="/" exact render={(props)=>(<ContactList {...props} contacts={(searchTerm.len < 1 || !searchTerm)? contacts : searchResults} getContactId={removeContactHandler} term={searchTerm} searchKeyword={searchHandler}/>)} />  
         <Route path="/contact/:id" component={ContactDetail} />
         <Route path="/delete/:id" render={(props)=>(<DeleteContact {...props} getContactId={removeContactHandler} />)} />
         <Route path="/edit" exact  render={(props)=>(<EditContact {...props} updateContactHandler={updateContactHandler}/>)} />
